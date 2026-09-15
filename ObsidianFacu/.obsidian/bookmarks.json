@@ -1,0 +1,60 @@
+{
+  "items": [
+    {
+      "type": "graph",
+      "ctime": 1789237616385,
+      "title": "Grafo facultad",
+      "options": {
+        "collapse-filter": true,
+        "search": "",
+        "showTags": false,
+        "showAttachments": false,
+        "hideUnresolved": false,
+        "showOrphans": true,
+        "collapse-color-groups": true,
+        "colorGroups": [
+          {
+            "query": "file:er año",
+            "color": {
+              "a": 1,
+              "rgb": 14701138
+            }
+          },
+          {
+            "query": "tag:#clase  ",
+            "color": {
+              "a": 1,
+              "rgb": 16760381
+            }
+          },
+          {
+            "query": "path:Pract",
+            "color": {
+              "a": 1,
+              "rgb": 13209112
+            }
+          },
+          {
+            "query": "tag:#materia  ",
+            "color": {
+              "a": 1,
+              "rgb": 5431378
+            }
+          }
+        ],
+        "collapse-display": true,
+        "showArrow": false,
+        "textFadeMultiplier": -0.4,
+        "nodeSizeMultiplier": 1,
+        "lineSizeMultiplier": 1,
+        "collapse-forces": false,
+        "centerStrength": 0.207024390243902,
+        "repelStrength": 9.01073170731707,
+        "linkStrength": 0.90009756097561,
+        "linkDistance": 252,
+        "scale": 0.6158498581359001,
+        "close": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "collapse-filter": true,
+  "search": "",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": true,
+  "colorGroups": [
+    {
+      "query": "file:er año",
+      "color": {
+        "a": 1,
+        "rgb": 14701138
+      }
+    },
+    {
+      "query": "tag:#clase  ",
+      "color": {
+        "a": 1,
+        "rgb": 7527043
+      }
+    },
+    {
+      "query": "path:Pract",
+      "color": {
+        "a": 1,
+        "rgb": 3046169
+      }
+    },
+    {
+      "query": "tag:#materia  ",
+      "color": {
+        "a": 1,
+        "rgb": 5431378
+      }
+    }
+  ],
+  "collapse-display": true,
+  "showArrow": false,
+  "textFadeMultiplier": -0.4,
+  "nodeSizeMultiplier": 1,
+  "lineSizeMultiplier": 1,
+  "collapse-forces": false,
+  "centerStrength": 0.207024390243902,
+  "repelStrength": 9.76,
+  "linkStrength": 0.90009756097561,
+  "linkDistance": 189,
+  "scale": 0.6158498581359002,
+  "close": true
+}

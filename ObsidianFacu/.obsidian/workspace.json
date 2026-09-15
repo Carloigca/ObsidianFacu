@@ -1,0 +1,226 @@
+{
+  "main": {
+    "id": "a2ecbc57ae03e560",
+    "type": "split",
+    "children": [
+      {
+        "id": "94e71c81f84e1e15",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "45cd047fdca83369",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Clase 4 - Monitores.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Clase 4 - Monitores"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d4dfd562f89838aa",
+    "type": "split",
+    "children": [
+      {
+        "id": "f024a389b8744838",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "dbccda83e832f12b",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Explorador de archivos"
+            }
+          },
+          {
+            "id": "2977ea7575c77f9c",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Buscar"
+            }
+          },
+          {
+            "id": "a5deed1d180d5467",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "Marcadores"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 266.5,
+    "collapsed": true
+  },
+  "right": {
+    "id": "24530610dd2447e7",
+    "type": "split",
+    "children": [
+      {
+        "id": "b5074f5933575035",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4cf3e64a2e7fef1f",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Enlaces entrantes"
+            }
+          },
+          {
+            "id": "a7cbacfd73478734",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Enlaces salientes"
+            }
+          },
+          {
+            "id": "0327ea708827dc4c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Etiquetas"
+            }
+          },
+          {
+            "id": "a717ffadf63ea455",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Todas las propiedades"
+            }
+          },
+          {
+            "id": "4bfa4b0d0c066c75",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Esquema"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Abrir selector rápido": false,
+      "graph:Abrir vista gráfica": false,
+      "canvas:Crear nuevo lienzo": false,
+      "daily-notes:Abrir la nota de hoy": false,
+      "templates:Insertar plantilla": false,
+      "command-palette:Abrir paleta de comandos": false,
+      "bases:Crear nueva base": false
+    }
+  },
+  "active": "45cd047fdca83369",
+  "lastOpenFiles": [
+    "Pasted image 20260914102045.png",
+    "Pasted image 20260914102038.png",
+    "Pasted image 20260914102029.png",
+    "Pasted image 20260914101501.png",
+    "Pasted image 20260914095504.png",
+    "Pasted image 20260914094326.png",
+    "Pasted image 20260914093936.png",
+    "Pasted image 20260914091317.png",
+    "Programación Concurrente.md",
+    "Clase 4 - Monitores.md",
+    "Clase 3 - Semáforos.md",
+    "Clase 1 - HTTP y estándares.md",
+    "Proyecto de Software.md",
+    "Clase 4 - BCNF y DM.md",
+    "TTPS.md",
+    "Bases de datos 1.md",
+    "Clase 3 - Escenarios.md",
+    "Clase 1 - TTPS.md",
+    "Clase 2 - Algoritmos.md",
+    "Clase 1 - Introducción a Concurrencia.md",
+    "BD1/Clase 1 - Modelo de datos.md",
+    "BD1/Clase 3 - Conceptos generales del diseño de bd relacional.md",
+    "BD1/Clase 2 - Conceptos generales del diseño de BD Relacionales.md",
+    "3er año (4to).md",
+    "Pasted image 20260909092140.png",
+    "Pasted image 20260909091806.png",
+    "Pract 2 - Semáforos.md",
+    "Pasted image 20260907094322.png",
+    "BD1/Sin título.md",
+    "BD1",
+    "Sin título.base",
+    "2026-08-19_BBDD1_clase_01_modelo de datos.pdf",
+    "Bienvenido.md",
+    "cree un enlace.md"
+  ]
+}
