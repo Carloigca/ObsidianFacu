@@ -1,3 +1,4 @@
+#clase 
 Volvemos a la pregunta de cómo implementamos la exclusión mutua y la exclusión por condición (AWAIT) en un lennguaje de programación. Debemos ver cómo se comunican los procesos. 
 Con las variables compartidas teníamos busy waiting y dejamos de tenerlo con los semáforos
 

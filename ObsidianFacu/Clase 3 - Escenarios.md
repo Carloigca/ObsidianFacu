@@ -10,7 +10,7 @@ Hoy vamos a ver una de las técnicas. Con la profesora Cecilia vamos a trabajar 
 Estos workFlow o flujos de trabajo representan un módulo del sistema y se ramifican en multiples caminos posibles. 
 ## Scenarios
 Podemos buscar "Scenarios Leite", o "Scenarios Leite WERPAPERS"
-Leite es un escritor que propuso la estructura
+==Julio== Leite es un escritor que propuso la estructura
 Los escenarios estan planteados para el mundo real, describen una función del sistema, una situación que encontramos en el dominio, y tienen 6 atributos que los estructuran:
 1. Título-Title
 2. Objetivo- Goal
@@ -18,6 +18,7 @@ Los escenarios estan planteados para el mundo real, describen una función del s
 4. Actores
 5. Recursos
 6. Episodios
+Mediante estos elementos, vamos a agrupar  todos los conocimientos del experto. Luego en el código vamos a juntar todos los escenarios similares en un caso de uso
 ---
 #### Context
 Es el punto de partida, lo que se da por hecho, lo que se considera para poder entender/describir el escenario. Tmb considerado como las Pre-condiciones
@@ -26,7 +27,9 @@ Es a dónde buscamos llegar, lo que debe estar dado una vez que termine el workf
 #### Título
 Describe la función, como el ID de las HU vistas en Inge. Aclarando si es un escenario exitoso, fallido, o con qué características. No hay q enumerarlos.
 #### Episodios
-Son la secuencia de pasos q se dan para llegar hasta el objetivo. Se escriben en lenguaje natural, y en oraciones separadas, precisas y cortas. Deja en claro quién hace una acción, y cuál es esa acción
+Son la secuencia de pasos q se dan para llegar hasta el objetivo. Se escriben en lenguaje natural, y en oraciones separadas, precisas y cortas. Deja en claro quién hace una acción, y cuál es esa acción.
+Aparece la secuencia, el condicional,, y la no secuencia (Tareas en cualquier orden). Pero el profe solo usa la secuencia (en orden).
+No vamos a usar excepciones como elementos, vamos a tratar las posibles excepciones como otros escenarios (de fallo digamos)
 #### Actores
 Podemos desarrollar Escenarios que sean solo del sistema, o sea que el actor podría ser el sistema, otros sistemas, o el tiempo mismo si llegara a ser necesario. 
 #### Recursos
@@ -58,3 +61,5 @@ Podemos poner varios Prompts por grupo
 Prompt: 
 Genera los Scenarios Leite necesarios a partir de la siguiente especificación: 
 El sistema debe permitir que un usuario inicie sesión con su email y contraseña, y solo tiene 3 intentos para ingresar correctamente sus datos. En caso de ingresar erróneamente sus datos, el sistema le debe informar del error, y en caso de que llegue a los 3 intentos, el sistema le deberá prohibir el acceso e informarle que envíe un mail a la administración.
+
+---

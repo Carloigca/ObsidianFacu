@@ -199,23 +199,167 @@ process Persona [id= 1..N]:: {
 }
 ```
 
-b) Bool Libre =1; Sem Mutex= 1; Int Queue cola[0]; 
+b) Bool Libre =V; Sem Mutex= 1; Int Queue cola[0]; 
 ```
+MAL
 process Persona [id= 1..N]:: {
 	P (Mutex)
 	if (Libre){
 		Libre= false;
 		Imprimir (doc);
-		
 		V(mutex);
+		
 	}else{
 		cola.encolar(id);
 		V(mutex);
+		Boolean imprimi=false;
 		
-		P(Libre);
+		while (! imprimi){
+			P(Mutex);
+			if ((Libre) & (prox(cola) = id)){
+				Libre = false;
+				desencolar(id)
+				Imprimir (doc);
+				V(Mutex)
+				imprimi = True;
+			}
+		}
+	}
+}
+```
+Bool free= true; Sem mutex =1; int Queue cola[0]; Sem espera[N] = ([N],0);
+``` 
+BIEN. Free se usa para indicar q la cola está vacía
+
+process Persona [id= 1..N]:: {
+	int aux= -1;
+	
+	P(Mutex) //para el Free y la Cola
+	if (free){ //Si está libre, la ocupo e imprimo
+		free = false;
+		V(Mutex)
+	} else { //Si no está libre, me encolo y espero aviso
+		Push (cola, id);
+		V(Mutex);
+		P( espera[id] ); 
 	}
 	
-	Usar un booleano para saber si hay alguien viendo la cola o usando la impresora. 
+	imprimir (doc); //imprimo (xq está libre, o xq me toca)
+	P(Mutex);
+	if ( cola.isEmpty() ) { //Si no hay nadie, solo libero
+		free = true;
+	} else { //Si hay alguien, le aviso q le toca
+		Pop (cola, aux); //Saco siguiente
+		V (espera[aux]); //Aviso que imprima
+	}
+	V(Mutex) //Libero para el siguiente 
+}
+```
+
+c) Terminó = 0; Sem Mutex = 1;
+```
+MAL
+process Persona [id= 1..N]:: {
+	Boolean imprimi = False; 
+	while (! imprimi){
+		P (Mutex);
+		if (Terminó == (id-1) ){
+			Imprimir (doc);
+			Terminó = id;
+			V(Mutex);
+			imprimi = True;
+		} else {
+			V (Mutex);
+		}
+	}
+}
+```
+Sem espera [N] = ([N], 0); Sem mutex = 1; espera[0]=1;
+```
+BIEN
+process Persona [id= 0..N-1]::{
+	P(espera[id]);
+	imprimir (doc);
+	V(espera[id+1]);
+}
+```
+
+d) Bool Libre=V; Prox= -1; Sem Mutex= 1; Int Queue cola[0]; 
+```
+MAL
+process Coordinador:: {
+	while (true){
+		P(mutex)
+		if ( !isEmpty(cola) & Libre){
+			prox = desencolar(cola)
+			V(mutex)
+			
+		}
+	}
+}
+process Persona [id= 1..N]::{}
+```
+Sem espera[N] = ([N],0); Sem Mutex =1; Sem llegue=0; Sem termine=0; int Queue cola[0];
+```
+BIEN
+process Persona [id= 0..N-1]::{
+	P(Mutex);
+	Push (cola, id);
+	V(Mutex);
+	V(llegue);
 	
+	P (espera[id]);
+	imprimir (doc);
+	V (termine)
+}
+
+process Coordinador ::{ 
+	int aux=-1;
+	for int i=0 ..N-1{ //espera aviso, se fija quién sigue, le avisa, espera aviso
+		P(llegue);
+		
+		P(Mutex);
+		Pop (cola, aux);
+		V(Mutex);
+		
+		V(espera[aux]);
+		
+		P(Termine);
+	}
+}
+```
+
+e) 
+```
+process Persona [id= 0..N-1]::{
+	P(Mutex);
+	Push (cola, id);
+	V(Mutex);
+	V(llegue);
+	
+	P (espera[id]); //Capaz espera no debería ser Sem, sino vector con -1,
+	//Se cambia por el nro de impresora a usar y dsp vuelve a -1 o simplemente avisa;
+	imprimir (doc);
+	V (termine) //Cómo avisa la impresora que liberó? 
+}
+
+process Coordinador ::{ 
+	int aux=-1;
+	for int i=0 ..N-1{ 
+		P(llegue); //espera aviso
+		
+		P(Mutex);
+		Pop (cola, aux); //saca al que sigue
+		V(Mutex);
+		
+		P (); //le asigna una impresora
+		//debería bloquear dicha impresora
+		V(espera[aux ]); //le avisa cuál usar
+		//cola de id de impresoras? Al recibir terminé, sabe q hay una encolada
+		
+		VER EXPLICACIÓN CON EJEMPLOOO
+		
+		P(Termine);
+	}
 }
 ```

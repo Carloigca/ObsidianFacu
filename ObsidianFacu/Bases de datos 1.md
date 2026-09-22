@@ -22,3 +22,7 @@ Los PPT no son material de estudio, solo sirven de guía para los profes
 [[Clase 2 - Conceptos generales del diseño de BD Relacionales]]
 [[Clase 3 - Conceptos generales del diseño de bd relacional]]
 [[Clase 4 - BCNF y DM]]
+[[Clase 5 - bd]]
+
+### Prácticas
+[[Practica 2 - BD1]]
