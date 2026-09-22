@@ -330,36 +330,76 @@ process Coordinador ::{
 ```
 
 e) 
+Persona:
+- llego, me encolo y aviso
+- Espero q me avisen que puedo imprimir, reviso cuál impresora me asignaron y la uso
+- Bloqueo la cola para devolverla, la desbloqueo y aviso
+Coordinador:
+- sé que todas las personas van a imprimir, espero que llegue una
+- Bloqueo la cola y saco una persona
+- Espero q haya impresora libre, la saco de la cola
+- La asigno y aviso
+
+Sem mutex=1(cola); Int Queue cola[0]; 
 ```
-process Persona [id= 0..N-1]::{
-	P(Mutex);
-	Push (cola, id);
-	V(Mutex);
+Process persona [id= 0..N-1]:: {
+	P(mutex);
+	push (cola, id);
+	V(mutex);
 	V(llegue);
 	
-	P (espera[id]); //Capaz espera no debería ser Sem, sino vector con -1,
-	//Se cambia por el nro de impresora a usar y dsp vuelve a -1 o simplemente avisa;
-	imprimir (doc);
-	V (termine) //Cómo avisa la impresora que liberó? 
+	P(espera[id]);
+	int miImpresora= impresoraAsignada[id];
+	imprimir (doc, miImpresora);
+	
+	P(mutexImp);
+	push (colaImp, miImpresora);
+	V(mutexImp);
+	V(cantImpresoras);
 }
 
-process Coordinador ::{ 
-	int aux=-1;
-	for int i=0 ..N-1{ 
-		P(llegue); //espera aviso
+process Coordinador:: {
+	int aux; int impAux;
+	for (int i=0..N-1) {
+		P(llegue);
 		
-		P(Mutex);
-		Pop (cola, aux); //saca al que sigue
-		V(Mutex);
+		P(mutex);
+		pop (cola, aux);
+		V(mutex);
 		
-		P (); //le asigna una impresora
-		//debería bloquear dicha impresora
-		V(espera[aux ]); //le avisa cuál usar
-		//cola de id de impresoras? Al recibir terminé, sabe q hay una encolada
+		P(cantImpresoras);
+		P(mutexImp);
+		pop (colaImp, auxImp);
+		V(mutexImp);
 		
-		VER EXPLICACIÓN CON EJEMPLOOO
-		
-		P(Termine);
+		impresoraAsignada[aux] = auxImp;
+		V(espera[aux]);
 	}
+}
+```
+
+#### Ejercicio 7
+```
+process Alumno [id= 1..N]::{
+	int tarea=-1;
+	while (tarea==-1){
+		if (espera[id] != 0){
+			tarea= espera[id];
+		}
+	}
+	
+	realizar tarea
+	P(mutex1);
+	Push (cola, tarea);
+	espera[id]=0;
+	V(mutex1)
+	
+	int puntaje=-1;
+	while (puntaje==-1){
+		if (espera[id] != 0){
+			puntaje = espera[id]; 
+		}
+	}
+	
 }
 ```
