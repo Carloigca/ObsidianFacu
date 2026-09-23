@@ -11,10 +11,14 @@
             "id": "056313bb46cd4f00",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Clase 5 - ttps.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Nueva pestaña"
+              "title": "Clase 5 - ttps"
             }
           }
         ]
@@ -184,6 +188,7 @@
   },
   "active": "056313bb46cd4f00",
   "lastOpenFiles": [
+    "Clase 5 - ttps.md",
     "Clase 6 - MySQL.md",
     "SQL.md",
     "Practica 2 - BD1.md",
@@ -222,7 +227,6 @@
     "3er año (4to).md",
     "BD1/Sin título.md",
     "BD1",
-    "2026-08-19_BBDD1_clase_01_modelo de datos.pdf",
-    "Bienvenido.md"
+    "2026-08-19_BBDD1_clase_01_modelo de datos.pdf"
   ]
 }
