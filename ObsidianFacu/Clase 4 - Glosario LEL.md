@@ -1,3 +1,4 @@
+#clase 
 Tmb está propuesto por Julio Leite. En este, cada término tiene 2 atributos que lo describen, noción e impacto.
 ==Noción==: Similar a las definiciones de diccionario
 ==Impacto==: Cómo se relacionan los distintos términos entre ellos
@@ -59,3 +60,5 @@ Todo el esfuerzo q hagamos en el LEL, se capitaliza al hacer los MockUps (la tab
 Mismo ejercicio que con los escenarios, escribimos prompt, que escriba simbolos, los categorice y escriba los impactos. Jugar con los prompt para el lunes
 
 Revisar cronograma porque el miercoles capaz es virtual. 
+
+![[Pasted image 20260923185320.png]]Foto en grupo de Telegram
