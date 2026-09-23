@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "c0d2076a7cdd2acb",
+        "id": "26f4ae323028c0b4",
         "type": "tabs",
         "children": [
           {
-            "id": "607d0bf3b70bc080",
+            "id": "056313bb46cd4f00",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -182,20 +182,22 @@
       "bases:Crear nueva base": false
     }
   },
-  "active": "607d0bf3b70bc080",
+  "active": "056313bb46cd4f00",
   "lastOpenFiles": [
+    "Clase 6 - MySQL.md",
+    "SQL.md",
+    "Practica 2 - BD1.md",
+    "Bases de datos 1.md",
+    "Clase 5 - bd.md",
     "Pract 2 - Semáforos.md",
     "Clase 3 - Semáforos.md",
     "Clase 4 - Monitores.md",
     "Clase 4 - Glosario LEL.md",
     "Sin título.base",
     "Sin título.canvas",
-    "Bases de datos 1.md",
     "Proyecto de Software.md",
     "TTPS.md",
     "Clase presencial TTPS.md",
-    "Clase 5 - bd.md",
-    "Practica 2 - BD1.md",
     "Clase 3 - Escenarios.md",
     "Pasted image 20260916102158.png",
     "Pasted image 20260916101957.png",
@@ -221,7 +223,6 @@
     "BD1/Sin título.md",
     "BD1",
     "2026-08-19_BBDD1_clase_01_modelo de datos.pdf",
-    "Bienvenido.md",
-    "cree un enlace.md"
+    "Bienvenido.md"
   ]
 }

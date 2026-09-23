@@ -23,6 +23,6 @@ Los PPT no son material de estudio, solo sirven de guía para los profes
 [[Clase 3 - Conceptos generales del diseño de bd relacional]]
 [[Clase 4 - BCNF y DM]]
 [[Clase 5 - bd]]
-
+[[Clase 6 - MySQL]]
 ### Prácticas
 [[Practica 2 - BD1]]

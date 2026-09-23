@@ -1,3 +1,4 @@
+#clase 
 #### Taller
 ![[Pasted image 20260916084013.png]]
 df1(idGrupo->nombreGrupo,vocalista)
