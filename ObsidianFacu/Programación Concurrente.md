@@ -22,6 +22,7 @@ Nota >=4 y <6 puede pedir hacer un tp a desarrollar (Ver primera clase)
 [[Clase 2 - Algoritmos]]
 [[Clase 3 - Semáforos]]
 [[Clase 4 - Monitores]]
+[[Clase 5 - ProgConcu]]
 
 ---
 Pract1 en papel

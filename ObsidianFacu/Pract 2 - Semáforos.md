@@ -380,7 +380,7 @@ process Coordinador:: {
 
 #### Ejercicio 7
 ```
-process Alumno [id= 1..N]::{
+MAL process Alumno [id= 1..N]::{
 	int tarea=-1;
 	while (tarea==-1){
 		if (espera[id] != 0){
@@ -399,7 +399,107 @@ process Alumno [id= 1..N]::{
 		if (espera[id] != 0){
 			puntaje = espera[id]; 
 		}
+	}	
+}
+
+Sem P =0;Sem barrera=0; Sem terminé=0; Sem Mutex=1; Sem Mutexnota=1; Queue cola[0]; int alumnos=0; int alumno[1..50]; int nota [1..10]; Sem grupoTermino[10] = (10, 0); 
+
+process alumno [id= 1..N]::{
+	int tarea = elegir ();
+	
+	P(MutexContador)
+	alumnos++;
+	if (alumnos==50){
+		for int i=1 to 50 V(barrera);
+	}
+	V(Mutexcontador);
+	P(barrera);
+	
+	realizar tarea 
+	P(Mutex)
+	Push (cola, tarea) //Avisa q terminó mediante la cola
+	V(Mutex)
+	V(Terminé)
+	
+	int notaGrupal=0;
+	P(grupoTermino[tarea]);
+	notaGrupal= nota[tarea];
+
+}
+
+process profesor:: {
+	int terminadas = 0;
+	int tareaActual;
+	int tareas[1..10] = (10, 0); 
+	
+	for int i=1 to 50{
+		P(terminé)
+		P(Mutex)
+		Pop (cola, tareaActual);
+		V(Mutex);
+		
+		tareas [tareaActual] ++;
+		//Si el grupo terminó, les asigno su nota (q es el orden en el q terminaron), y les aviso que ya está asignada en el vector de notas para cada tarea
+		if (tareas [tareaActual] == 5){ 
+			terminadas ++;
+			P(MutexNota)
+			nota[tareaActual]= terminadas;
+			V(MutexNota)
+			for int i=1 to 5 {
+				V(grupoTermino[tareaActual]);
+			}
+		}
+	}
+}
+```
+
+#### Ejercicio 8 a y b
+```
+process empleado [id= 1..E]:: {
+	int piezas=0;
+	while (piezasTotales < T) {
+		P(mutex);
+		pop (cola, pieza);
+		V(mutex);
+		produce la pieza
+		piezas++;
+		
+		P(mutexPiezas);
+		piezasTotales++;
+		V(mutexPiezas);
 	}
 	
+	piezasEmpleado[id]= piezas;
+	P(mutexTerminados);
+	terminados++;
+	if (terminados == E){
+		V(terminaron);
+	}
+	V(mutexTerminados);
 }
+
+process empleado [id= 1..E]:: {
+	int piezas=0;
+	P(Mutex)
+	while (piezasHechas < T){
+		piezasHechas ++;
+		V(mutex);
+		producir la pieza;
+		piezas++;
+		
+		P(mutex);
+	}
+	V(mutex)
+	
+	P(mutexMax)
+	if (piezas > max) {
+		max = piezas;
+	}
+	V(mutexMax)
+}
+```
+
+#### Ejercicio 9
+```
+
 ```
