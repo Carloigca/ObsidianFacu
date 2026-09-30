@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "26f4ae323028c0b4",
+        "id": "50fc32ef362283fa",
         "type": "tabs",
         "children": [
           {
-            "id": "056313bb46cd4f00",
+            "id": "ee28cb8b9524a4e9",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pract 2 - Semáforos.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Pract 2 - Semáforos"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Vista gráfica"
             }
           }
         ]
@@ -186,10 +182,11 @@
       "bases:Crear nueva base": false
     }
   },
-  "active": "056313bb46cd4f00",
+  "active": "ee28cb8b9524a4e9",
   "lastOpenFiles": [
-    "Programación Concurrente.md",
     "Clase 5 - ProgConcu.md",
+    "Pract 2 - Semáforos.md",
+    "Programación Concurrente.md",
     "Pasted image 20260928103107.png",
     "Clase 5 - ttps.md",
     "Pasted image 20260923190512.png",
@@ -201,7 +198,6 @@
     "Practica 2 - BD1.md",
     "Bases de datos 1.md",
     "Clase 5 - bd.md",
-    "Pract 2 - Semáforos.md",
     "Clase 3 - Semáforos.md",
     "Clase 4 - Monitores.md",
     "Sin título.base",
