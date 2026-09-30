@@ -1,4 +1,5 @@
 #materia
+[[SQL]]
 #### Teorías
 Algunas clases son taller, o sea q hacen preguntas abiertas. En los ejercicios de las teorías ponen lo que quieren que vayamos explicando en el parcial
 Hay 5 temas principales: 

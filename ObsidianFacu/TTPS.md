@@ -6,4 +6,6 @@ Clase 2 no me pude conectar, fue virtual como la 1
 [[Clase 3 - Escenarios]]
 [[Clase presencial TTPS]]
 [[Clase 4 - Glosario LEL]]
+[[Clase 5 - ttps]]
+[[Clase 6 - Entrevista]]
 
