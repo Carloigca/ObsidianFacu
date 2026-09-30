@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "89e5dfc55970fc7a",
+        "id": "0ed43fe3b617a925",
         "type": "tabs",
         "children": [
           {
-            "id": "0c9c9c2ab97839fd",
+            "id": "b74f07435534f49f",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Clase 6 - Entrevista.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Clase 6 - Entrevista"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Vista gráfica"
             }
           }
         ]
@@ -186,12 +182,13 @@
       "bases:Crear nueva base": false
     }
   },
-  "active": "0c9c9c2ab97839fd",
+  "active": "b74f07435534f49f",
   "lastOpenFiles": [
-    "TTPS.md",
     "Clase 6 - Entrevista.md",
-    "Bases de datos 1.md",
+    "Sin título.md",
     "Clase 9 - API y API REST.md",
+    "TTPS.md",
+    "Bases de datos 1.md",
     "Proyecto de Software.md",
     "Pract 2 - Semáforos.md",
     "Programación Concurrente.md",
@@ -225,7 +222,6 @@
     "Clase 2 - Algoritmos.md",
     "Clase 1 - Introducción a Concurrencia.md",
     "BD1/Clase 1 - Modelo de datos.md",
-    "BD1/Clase 3 - Conceptos generales del diseño de bd relacional.md",
     "BD1",
     "2026-08-19_BBDD1_clase_01_modelo de datos.pdf"
   ]
