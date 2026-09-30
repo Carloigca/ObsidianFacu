@@ -59,7 +59,7 @@ Podemos presentar diferentes vistas de los mismos datos.
 ...
 
 ---
-Store Procedures (SP)
+#### Store Procedures (SP)
 Son bloques de código almacenados q se pueden ejecutar repetidamente por el nombre q le demos.  Se almacenan en el servidor de forma pre-compilada, de modo que se pueda ejecutar más rápido q  una consulta normal. Sirve para poder llamarlos desde aplicaciones externas 
 
 Nos proporciona: 
