@@ -24,3 +24,6 @@ Cuando tenga ==más de un productor==, necesito un semáforo para que no sobre-e
 
 #### Maximizar la concurrencia
 Hay que estar atento a minimizar el tiempo en el q los procesos se bloquean entre sí. 
+
+#### Coordinación de múltiples procesos
+Cuando hay que coordinar el acceso a un recurso entre varios procesos, conviene ==usar un arreglo de semáforos== donde cada proceso tenga su semáforo propio para saber cuándo acceder al recurso. 

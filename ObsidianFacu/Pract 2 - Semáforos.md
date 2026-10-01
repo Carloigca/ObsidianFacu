@@ -590,7 +590,276 @@ process armadores [id= 1..2]:: {
 }
 ```
 
-#### Ejercicio 10
+#### Ejercicio 10 a
+Asumimos que se puede guardar un dato compuesto tipo registro con el id y el tipo de camión
+camionesT:
+	bloqueo el arreglo de camiones
+	Me agrego al arreglo de camiones poniendo id y tipo de carga
+	desbloqueo el arreglo
+	aumento la cant. de camiones en fila
+	---
+	espero a que me habiliten mi semáforo de camiones de Trigo
+	descargo
+	bloqueo contador
+	camionesTotales++
+	libero contador 
+	Aviso??
+camionesM:
+	bloqueo el arreglo de camiones
+	Me agrego al arreglo de camiones poniendo mi id y tipo de carga
+	desbloqueo el arreglo
+	aumento la cant. de camiones en fila 
+	---
+	espero a que me habiliten mi semáforo de camiones de Maíz
+	descargo
+	bloqueo contador
+	camionesTotales++
+	libero contador
+	Aviso??
+Coordinador:
+	Mientras camionesTotales < (T+M)
+		disminuyo la cant. de camiones en fila
+		disminuyo la cant. de espacios disponibles (de 7 inicialmente)
+		saco camión del arreglo de camiones en la posición indice
+		Si camion.tipo = T y la cantT <5
+			disminuyo la cant de camionesT // descontamos de los 5 posibles
+			aumento la cantT // contamos los camiones atendidos para evaluar si llegamos a 5
+			aumento su semaforo particular en camiones de Trigo //le indico que empiece
+			aumento el id
+		---
+		sino si (el camion.tipo = M y la cantM <5)
+			disminuyo la cant de camionesM
+			aumento su semaforo particular en camiones de Maíz
+			disminuyo el semáforo terminé
+		aumento en 1 el indice usado
+		
+
 ```
 
+procedure camionesT [id=0..T-1]:: {
+	P(mutex)
+	Push (cola, (id,tipo)) // me encolo
+	V(mutex)
+	V(hayCamion) //aviso que me encolé
+	
+	P(camionesT[id]) //Espero q me habiliten
+	descargar ()
+	V(semTotal) //sumo al contador total
+	V(EsperarT) //sumo al contador de camiones de Trigo simultáneos
+}
+
+procedure camionesM [id=0..M-1]:: {
+	P(mutex)
+	push (cola, (id,tipo)) // me encolo
+	V(mutex) 
+	V(hayCamion) // aviso q me encolé
+	
+	P(camionesM[id]) // espero q me habiliten
+	descargar()
+	V(semTotal)
+	V(esperarM)
+}
+
+procedure coordinador:: {
+	for int i=0.. (T+M-1){
+		P(hayCamion)
+		P(mutex)
+		pop (cola, (id,tipo))
+		V(mutex)
+		if (tipo = trigo){
+			P(esperarT)
+			P(semTotal)
+			V(camionesT[id])
+		} else {
+			P(esperarM)
+			P(semTotal)
+			V(camionesM[id])
+		}
+		
+	}
+}
+```
+
+#### Ejercicio 10 b
+camiones:
+	me fijo si hay lugar para mi tipo
+	me fijo si hay lugar en general
+	descargo
+	aumento en 1 el lugar de mi tipo
+	aumento en 1 el lugar general
+```
+Sem semM=5; Sem semT=5; Sem semTotal=7
+procedure camionT [id=0.. T-1]:: {
+	P (semT)
+	P (semTotal)
+	descargar()
+	V (semT)
+	V (semTotal)
+} 
+
+procedure camionM [id=0..M-1]:: {
+	P (semM)
+	P (semTotal)
+	descargar()
+	V (semM)
+	V (semTotal)
+}
+```
+
+#### Ejercicio 11
+Persona
+	llego y me encolo (proteger cola)
+	aviso aumentando cantPersonas
+	espero confirmación (arreglo de semáforos)
+Empleado
+	for 10 i
+		for 5 j
+			disminuyo cantPersonas
+			tomo a alguien de la cola 
+			lo meto en un arreglo local
+		for each Persona en arreglo local
+			vacunarPersona()
+			aumento uno en su semaforo personal (del arreglo de semáforos)
+
+```
+process Persona [id=1..50]:: {
+	P(mutex);
+	Push (cola, id);
+	V(mutex);
+	V(cantPersonas);
+	P(semaforos[id]);
+}
+
+process Empleado:: {
+	for int i=1..10{
+		for int j=1..5{
+			P(cantPersonas);
+			P(mutex);
+			Pop (cola, id);
+			V(mutex);
+			grupo[j]=id;
+		}
+		for (int id in grupo){
+			vacunarPersona()
+			V(semaforos[id])
+		}
+		
+	}
+}
+```
+
+#### Ejercicio 12 a
+```
+procedure Pasajero[id=1..150]:: {
+	P(mutexColaR)
+	Push (colaRecepcionista, id)
+	V(mutexColaR)
+	V(avisoRecep)
+	
+	P(pasajeros[id])
+	
+	idEnfermera= asignaciones[id]
+	P(mutexColas[idEnfermera]);
+	Push (colas[idEnfermera], id);
+	V(mutexColas[idEnfermera]);
+	V(aviso[idEnfermera]);
+
+	P(pasajeros[id])
+}
+
+procedure Recepcionista:: {
+	for int i=1..150 {
+		P(avisoRecep);
+		
+		P(mutexColaR)
+		Pop (colaRecepcionista, idPaciente)
+		V(mutexColaR)
+		
+		idEnfermera= sacarMin (colas[1].lenght, colas[2].lenght, colas[3].lenght);
+		asignaciones[idPaciente] = idEnfermera
+		V(pasajeros[idPaciente])
+	}
+}
+
+procedure Enfermera [id=1..3]:: {
+	int atendidos=0;
+	while (atendidos<150){
+		P(aviso[id])
+		
+		if (atendidos<150){
+			P(mutexColas[id])
+			Pop (colas[id], idPersona)
+			V(mutexColas[id])
+			
+			hisopar (idPersona)
+			V(pasajeros[idPersona])
+			P(mutexCont)
+			atendidos++
+			V(mutexCont)
+			
+			if (atendidos==150){
+				// hay que terminar, entonces vuelvo a habilitar todas las 
+				//enfermeras para q puedan pasar el "P(aviso[id])" y hagan el if
+				V(aviso[1])
+				V(aviso[2])
+				V(aviso[3])
+			}
+		}
+		
+	}
+}
+```
+notas
+	if (idEnfermera=1){
+		P(mutexCola1)
+		Push (colas[1], id)
+		V(mutexCola1)
+		V(aviso[1])
+		
+	} else if (idEnfermera=2){
+		P(mutexCola2)
+		Push (colas[2], id)
+		V(mutexCola2)
+		V(aviso[2])
+	} else {
+		P(mutexColas[id])
+		Push (colas[3], id)
+		V(mutexCola3)
+		V(aviso[3])
+	}
+
+#### Ejercicio 12 b
+```
+process Pasajero[id=1..150]:: {
+	P(mutexGeneralCola);
+	idEnfermera= min (cola[1..3].lenght);
+	Push (cola[idEnfermera], id);
+	V(mutexGeneralCola);
+	
+	V(aviso[idEnfermera]);
+	P(pacientes[id]);
+}
+
+process Enfermera[id=1..3]::{
+	while (atendidos <150){
+		P(aviso[id])
+		if (atendidos<150){
+			P(semaforos[id]);
+			Pop(cola[id], idPaciente);
+			V(semaforos[id]);
+			
+			Hisopar();
+			V(pacientes[idPaciente]);
+			
+			P(mutexAtendidos);
+			atendidos++;
+			V(mutexAtendidos);
+			if (atendidos==150){
+				V(aviso[1]);
+				V(aviso[2]):
+				V(aviso[3]);
+			}
+		}
+	}
+}
 ```
