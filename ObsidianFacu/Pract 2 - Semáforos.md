@@ -500,6 +500,97 @@ process empleado [id= 1..E]:: {
 ```
 
 #### Ejercicio 9
+carpinteros:
+	constantemente
+		hace marco
+		disminuyo un espacio libre
+		Bloqueo buffer para guardarlo
+		guardo
+		aumento el indice de libres (marcos hechos)
+		libero el buffer (desbloqueo a los otros carpinteros)
+		aumento la cant. de marcos hechos
+vidriero
+	constantemente
+		hace vidrio
+		disminuye un espacio vacío
+		lo guarda en el buffer
+		aumento el indice de libres (vidrios hechos)
+		aumenta la cant. de vidrios hechos
+armadores:
+	constantemente
+			toma marco
+				descuento uno hecho
+				le aviso al otro armador
+				saco el marco del buffer
+				muevo el indice de ocupados
+				le aviso al otro armador (lo libero)
+				aumento los espacios libres
+			toma vidrio
+				descuento uno hecho
+				le aviso al otro armador
+				saco el vidrio del buffer
+				muevo el indice de ocupados
+				le aviso al otro armador (lo libero)
+				aumento los espacios libres
+			arma la ventana
+			entrega o deja la ventana
+
+```
+var
+buffer depoM[] [1..30]; Sem mutexM=1; Sem llenoM=0; Sem vacíoM=30; Sem sacarM=1;
+int libreM=0; int ocupadoM=0;
+
+buffer depoV[] [1..50]; Sem llenoV=0; Sem vacíoV=50; Sem sacarV=1;
+int libreV=0; int ocupadoV
+
+process carpintero [id= 1..4]::{
+	while (true){
+		marco= hace marco
+		P(vacíoM) // disminuyo espacio libre 
+		
+		P(mutexM) // bloqueo buffer
+		depoM[libreM] = marco;
+		libreM= (libreM++) mod 30;
+		V(mutexM) // libero buffer
+		V(llenoM) // incremento cant hechos
+	}
+}
+
+process vidriero:: {
+	while (true){
+		vidrio= hace vidrio
+		P(vacioV); // descuento espacio libre
+		
+		depoV[libre] = vidrio
+		libreV= (libreV++) mod 50;
+		V(llenoV) // aumento cant hechos
+	}
+}
+
+process armadores [id= 1..2]:: {
+	while (true){
+		P(llenoM); //tomo marco
+		P(sacarM); //aviso al otro armador
+		
+		marco= depoM[ocupadoM];
+		ocupadoM= (ocupadoM++) mod 30;
+		V(sacarM); //dejo sacar al otro
+		V(vacioM); //aviso que vacié un espacio
+		
+		P(llenoV); //tomo vidrio
+		P(sacarV); //aviso al otro armador
+		vidrio= depoV[ocupadoV];
+		ocupadoV= (ocupadoV++) mod 50;
+		V(sacarV); //dejo sacar al otro
+		V(vacíoV); //aviso q vacié un espacio
+		
+		Arma ventana (marco, vidrio)
+	}
+	
+}
+```
+
+#### Ejercicio 10
 ```
 
 ```

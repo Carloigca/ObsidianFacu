@@ -17,6 +17,10 @@ Rendr y aprobar el ecamen de promo el 14/12.
 Nota >= 6 promociona
 Nota >=4 y <6 puede pedir hacer un tp a desarrollar (Ver primera clase)
 
+
+### [[Dudas Prog Concu]]
+[[Apunte ProgConcu]]
+
 ---
 [[Clase 1 - Introducción a Concurrencia]]
 [[Clase 2 - Algoritmos]]

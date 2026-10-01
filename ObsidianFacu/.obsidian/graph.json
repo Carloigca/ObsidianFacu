@@ -34,6 +34,13 @@
         "a": 1,
         "rgb": 5431378
       }
+    },
+    {
+      "query": "tag:#extra  ",
+      "color": {
+        "a": 1,
+        "rgb": 15452452
+      }
     }
   ],
   "collapse-display": true,
@@ -41,7 +48,7 @@
   "textFadeMultiplier": -0.4,
   "nodeSizeMultiplier": 1,
   "lineSizeMultiplier": 1,
-  "collapse-forces": false,
+  "collapse-forces": true,
   "centerStrength": 0.207024390243902,
   "repelStrength": 9.76,
   "linkStrength": 0.90009756097561,

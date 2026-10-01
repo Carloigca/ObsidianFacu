@@ -1,3 +1,4 @@
+#extra 
 Es un lenguaje especialmente diseñado para manipular y consultar bases de datos relacionales q se convirtió en un estándar. 
 Se basa en el álgebra relacional y el cálculo relacional, y se compone por un lenguaje de definición de datos (DDL), un lenguaje de manipulación de datos (DML), y un lenguaje de control de datos (DCL)
 
