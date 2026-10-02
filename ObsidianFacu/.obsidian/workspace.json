@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "57e1c100aec69b40",
+        "id": "5edad74b5b5ae6f1",
         "type": "tabs",
         "children": [
           {
-            "id": "600958562a314196",
+            "id": "50660841e65eb6c9",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -182,8 +182,9 @@
       "bases:Crear nueva base": false
     }
   },
-  "active": "600958562a314196",
+  "active": "50660841e65eb6c9",
   "lastOpenFiles": [
+    "Practica 2 - BD1.md",
     "Apunte ProgConcu.md",
     "Dudas Prog Concu.md",
     "Pract 2 - Semáforos.md",
@@ -209,7 +210,6 @@
     "Pasted image 20260923190512.png",
     "Pasted image 20260923190448.png",
     "Clase 4 - Glosario LEL.md",
-    "Practica 2 - BD1.md",
     "Clase 5 - bd.md",
     "Clase 3 - Semáforos.md",
     "Clase 4 - Monitores.md",
