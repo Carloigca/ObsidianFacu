@@ -5,7 +5,7 @@
   "showAttachments": false,
   "hideUnresolved": false,
   "showOrphans": true,
-  "collapse-color-groups": true,
+  "collapse-color-groups": false,
   "colorGroups": [
     {
       "query": "file:er año",
@@ -53,6 +53,6 @@
   "repelStrength": 9.76,
   "linkStrength": 0.90009756097561,
   "linkDistance": 189,
-  "scale": 0.5481602137657346,
-  "close": true
+  "scale": 0.6714935598037235,
+  "close": false
 }
