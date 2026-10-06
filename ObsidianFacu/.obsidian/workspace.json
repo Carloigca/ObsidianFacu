@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "508b9fd353ba6544",
+        "id": "a69253a92f3d1882",
         "type": "tabs",
         "children": [
           {
-            "id": "9c14d306c369f4a2",
+            "id": "2252a73cc880d770",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -182,8 +182,9 @@
       "bases:Crear nueva base": false
     }
   },
-  "active": "9c14d306c369f4a2",
+  "active": "2252a73cc880d770",
   "lastOpenFiles": [
+    "Video y consulta 5-oct.md",
     "Pract 3 - Monitores.md",
     "Programación Concurrente.md",
     "3er año (4to).md",
@@ -221,7 +222,6 @@
     "Clase 3 - Escenarios.md",
     "Clase 5 - MVC y Jinja.md",
     "Clase 1 - HTTP y estándares.md",
-    "Clase 4 - BCNF y DM.md",
     "BD1",
     "2026-08-19_BBDD1_clase_01_modelo de datos.pdf"
   ]
