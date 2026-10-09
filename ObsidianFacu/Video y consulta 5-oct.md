@@ -1,3 +1,4 @@
+#extra 
 Si bien teníamos una guía, el entrevistado termina marcando el flujo de la entrevista por lo que es necesaria la escucha activa para generar preguntas dinámiocas acorde a lo q responde.
 En este caso, el entrevistado vino con un flujo y nos fue guiando
 

@@ -34,6 +34,12 @@ Cuestionarios de Autoevaluación
 La primera es de HTML-CSS-WCAG. La segunda es de Python. Estas no valen por puntos de teoría, son para saber el nivel, si hace falta aprender/reforzar algo. 
 
 ---
+#### Clases
 [[Clase 1 - HTTP y estándares]]
 [[Clase 5 - MVC y Jinja]]
 [[Clase 9 - API y API REST]]
+
+
+---
+#### Explicaciones
+[[Explicación de Autenticación y Autorización (video)]]

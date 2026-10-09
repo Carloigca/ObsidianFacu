@@ -26,6 +26,8 @@ Agrupa distintos permisos para asignar un rol a un usuario
 ![[Pasted image 20261007212432.png|420]]
 En los controladores vamos a tener endpoints distintos, y cada uno debe tener asociado un permiso para indicar si un usuario puede o no acceder al endpoint. 
 
+Hasta el min 10 mostró
+
 En init.py puso las funciones básicas y necesarias. Hasta el minuto 22:00 las mostró. 
 
 ---
@@ -58,3 +60,28 @@ Dsp importamos el config desde el init al mismo nivel.
 min 39 aprox muestra cómo aplicar la configuración digamos
 
 min 41:30 aprox pasa al iniciar sesión
+
+---
+## Login
+En la carpeta Core declaramos la lógica de negocio, mientras que en la carpeta web declaramos lo relacionado a HTTP 
+Dentro  de los controladores de web, tenemos auth.py donde declaramos el Blueprint, y el endpoint get de login, que en este caso carga el template básico de login creado en la dirección templates>auth>login.html![[Pasted image 20261008092338.png|565]]
+
+![[Pasted image 20261008092055.png|573]]
+
+Cuando el usuario carga sus credenciales, se impacta el Post Autenticate.
+
+El endpoint Post Autenticate usa las funciones definidas en el init.py de core>auth
+Una vez que validamos al usuario, limpiamos la session y dsp guardamos los datos del usuario que queramos, ya que es una memoria que funciona como un diccionario
+![[Pasted image 20261008093112.png|428]]
+
+#### Logout
+Si la sesion no estaba iniciada, session no debería tener un id guardado
+![[Pasted image 20261008093303.png]]
+
+---
+### Flash
+Los flash usados en estos endpoints son para dar avisos rápidos sin necesidad de crear más contenido tipo HTML. Se pone flash con dos parámetros: el primero es el texto a mostrar, y el segundo es el tipo de aviso, que si es error se muestra rojo, si es success verde, y después están info y warning también. 
+
+En el archivo home.html declaramos el html de las flash
+![[Pasted image 20261008094102.png|461]]
+![[Pasted image 20261008094133.png|497]]
