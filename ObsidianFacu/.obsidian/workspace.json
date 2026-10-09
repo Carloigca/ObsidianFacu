@@ -11,10 +11,14 @@
             "id": "6856ae1e5bbe57b3",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Practica 2 - BD1.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Nueva pestaña"
+              "title": "Practica 2 - BD1"
             }
           }
         ]
