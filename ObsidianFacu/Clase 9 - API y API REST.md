@@ -44,6 +44,7 @@ Errores:
 - 422: JSON válido, datos que no cumplen el contrato. Para validación y lo documentamos
 - 404: No se encontró la solicitud individual pedida
 - 409: Conflictos
+- 407: 
 - 500: Fallo inesperado en el servidor. 
 - 200: La colección buscada existe, aunque no hay conicidencias (Se devuelve una lista vacía)
 - 204: se eliminó correctamente (con DELETE) un recurso. El response viene vacío
