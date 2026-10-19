@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "825e2fd109f45fa1",
+        "id": "88cb50e4e9995d25",
         "type": "tabs",
         "children": [
           {
-            "id": "58f988f57117ce61",
+            "id": "8cdcbd3c3c350888",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -182,12 +182,13 @@
       "bases:Crear nueva base": false
     }
   },
-  "active": "58f988f57117ce61",
+  "active": "8cdcbd3c3c350888",
   "lastOpenFiles": [
+    "Pract 4 - PMA y PMS.md",
+    "Programación Concurrente.md",
     "Clase 6B - RPC y Rendezvouz.md",
     "Pasted image 20261019101059.png",
     "Pasted image 20261019095733.png",
-    "Programación Concurrente.md",
     "Clase 6A - repaso PMA y PMS.md",
     "Pasted image 20261019084532.png",
     "Pasted image 20261019083709.png",

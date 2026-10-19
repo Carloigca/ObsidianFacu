@@ -35,6 +35,8 @@ Nota >=4 y <6 puede pedir hacer un tp a desarrollar (Ver primera clase)
 Pract1 en papel
 [[Pract 2 - Semáforos]]
 [[Pract 3 - Monitores]]
+[[Pract 4 - PMA y PMS]]
+
 
 ---
 ## Temas
