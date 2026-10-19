@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "29faa99c61040f72",
+        "id": "a20a569d0520c528",
         "type": "tabs",
         "children": [
           {
-            "id": "0ea11051a0bc87dd",
+            "id": "c209ec1f407dd294",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Bases de datos 1.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Nueva pestaña"
+              "title": "Bases de datos 1"
             }
           }
         ]
@@ -182,18 +186,19 @@
       "bases:Crear nueva base": false
     }
   },
-  "active": "0ea11051a0bc87dd",
+  "active": "c209ec1f407dd294",
   "lastOpenFiles": [
+    "Clase.md",
+    "Clase 9 - API y API REST.md",
+    "Proyecto de Software.md",
+    "Clase 5 - MVC y Jinja.md",
     "Clase 8 - Visualización de datos.md",
     "Pasted image 20261014090642.png",
     "Pasted image 20261014085358.png",
     "Bases de datos 1.md",
-    "Clase.md",
-    "Proyecto de Software.md",
     "Clase - Autenticación (Etapa2).md",
     "TTPS.md",
     "Clase 8 - Módulos y Clase de Agentes.md",
-    "Clase 9 - API y API REST.md",
     "Clase 6 - Entrevista.md",
     "Clase 3 - Escenarios.md",
     "Clase presencial TTPS.md",
