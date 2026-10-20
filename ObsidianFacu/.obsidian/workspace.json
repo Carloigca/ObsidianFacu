@@ -1,20 +1,24 @@
 {
   "main": {
-    "id": "a2ecbc57ae03e560",
+    "id": "a7782bc4ccad7a7e",
     "type": "split",
     "children": [
       {
-        "id": "88cb50e4e9995d25",
+        "id": "87fae3846f094863",
         "type": "tabs",
         "children": [
           {
-            "id": "8cdcbd3c3c350888",
+            "id": "b5d3356f250cdf26",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Clase ? - ProySoft.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Nueva pestaña"
+              "title": "Clase ? - ProySoft"
             }
           }
         ]
@@ -23,15 +27,30 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "d4dfd562f89838aa",
+    "id": "ba79a6f1f540908f",
     "type": "split",
     "children": [
       {
-        "id": "f024a389b8744838",
+        "id": "29a09e7082815031",
         "type": "tabs",
         "children": [
           {
-            "id": "2977ea7575c77f9c",
+            "id": "3ff8d948e6a4f559",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Explorador de archivos"
+            }
+          },
+          {
+            "id": "ce3e1fd94e8264e0",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -48,7 +67,7 @@
             }
           },
           {
-            "id": "a5deed1d180d5467",
+            "id": "0030dac32f21875c",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -59,43 +78,29 @@
               "icon": "lucide-bookmark",
               "title": "Marcadores"
             }
-          },
-          {
-            "id": "706e865318c17623",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical",
-                "autoReveal": false,
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-folder-closed",
-              "title": "Explorador de archivos"
-            }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 266.5,
+    "width": 300,
     "collapsed": true
   },
   "right": {
-    "id": "24530610dd2447e7",
+    "id": "6495b8b01c23b27d",
     "type": "split",
     "children": [
       {
-        "id": "b5074f5933575035",
+        "id": "7bb2c929b75e2192",
         "type": "tabs",
         "children": [
           {
-            "id": "4cf3e64a2e7fef1f",
+            "id": "d11ec5122c1ba44a",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Clase ? - ProySoft.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -109,11 +114,12 @@
             }
           },
           {
-            "id": "a7cbacfd73478734",
+            "id": "cbe12fe41f8107fa",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Clase ? - ProySoft.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -122,7 +128,7 @@
             }
           },
           {
-            "id": "0327ea708827dc4c",
+            "id": "54552e6e5a2b7252",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -137,7 +143,7 @@
             }
           },
           {
-            "id": "a717ffadf63ea455",
+            "id": "0c8fa7880b7916df",
             "type": "leaf",
             "state": {
               "type": "all-properties",
@@ -151,11 +157,12 @@
             }
           },
           {
-            "id": "4bfa4b0d0c066c75",
+            "id": "aa8e6cc8fed966ae",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
+                "file": "Clase ? - ProySoft.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -182,47 +189,8 @@
       "bases:Crear nueva base": false
     }
   },
-  "active": "8cdcbd3c3c350888",
+  "active": "b5d3356f250cdf26",
   "lastOpenFiles": [
-    "Pract 4 - PMA y PMS.md",
-    "Programación Concurrente.md",
-    "Clase 6B - RPC y Rendezvouz.md",
-    "Pasted image 20261019101059.png",
-    "Pasted image 20261019095733.png",
-    "Clase 6A - repaso PMA y PMS.md",
-    "Pasted image 20261019084532.png",
-    "Pasted image 20261019083709.png",
-    "Pasted image 20261019083231.png",
-    "Pract 2-Ejer 9.md",
-    "Pract 2-Ejer 7.md",
-    "Practica 2 - BD1.md",
-    "Pract 2-Ejer 8.md",
-    "Clase 8 - Visualización de datos.md",
-    "Pasted image 20261014090642.png",
-    "Pasted image 20261014085358.png",
-    "Bases de datos 1.md",
-    "Clase.md",
-    "Proyecto de Software.md",
-    "Clase - Autenticación (Etapa2).md",
-    "TTPS.md",
-    "Clase 8 - Módulos y Clase de Agentes.md",
-    "Clase 9 - API y API REST.md",
-    "Clase 6 - Entrevista.md",
-    "Clase 3 - Escenarios.md",
-    "Clase presencial TTPS.md",
-    "Clase 4 - Glosario LEL.md",
-    "Clase 7 - Agentes de IA y Supabase.md",
-    "Clase 5 - ttps.md",
-    "Clase 1 - TTPS.md",
-    "Explicación de Autenticación y Autorización (video).md",
-    "Clase 1 - HTTP y estándares.md",
-    "Pasted image 20261008094133.png",
-    "Pasted image 20261008094102.png",
-    "Pasted image 20261008093303.png",
-    "Video y consulta 5-oct.md",
-    "Sin título.base",
-    "Sin título.canvas",
-    "BD1",
-    "2026-08-19_BBDD1_clase_01_modelo de datos.pdf"
+    "Clase ? - ProySoft.md"
   ]
 }
