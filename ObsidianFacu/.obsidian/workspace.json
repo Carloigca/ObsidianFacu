@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Bases de datos 1.md",
+                "file": "Programación Concurrente.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Bases de datos 1"
+              "title": "Programación Concurrente"
             }
           }
         ]
@@ -188,6 +188,7 @@
   },
   "active": "c209ec1f407dd294",
   "lastOpenFiles": [
+    "Bases de datos 1.md",
     "Clase.md",
     "Clase 9 - API y API REST.md",
     "Proyecto de Software.md",
@@ -195,7 +196,6 @@
     "Clase 8 - Visualización de datos.md",
     "Pasted image 20261014090642.png",
     "Pasted image 20261014085358.png",
-    "Bases de datos 1.md",
     "Clase - Autenticación (Etapa2).md",
     "TTPS.md",
     "Clase 8 - Módulos y Clase de Agentes.md",
