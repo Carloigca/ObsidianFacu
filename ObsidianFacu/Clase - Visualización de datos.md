@@ -1,0 +1,1 @@
+Es la representación gráfica de información y datos. Al usar elementos visuales como cuadros, gráficos, 

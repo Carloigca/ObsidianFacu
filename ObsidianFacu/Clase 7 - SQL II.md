@@ -59,7 +59,7 @@ DURABILIDAD
 ---
 ### Triggers
 Es un objeto con nombre denntro de la DB que se asocia con una tabla y se activa cuando se da un evento en particular dentro de la misma. Permite automatizar acciones o aplicar una lógica ante el cambio producido
-SOLO puede haber un disparador por tabla que corresponda a un momento y sentecia dado.![[image.JTODW3.png]]
+SOLO puede haber un disparador por tabla que corresponda a un momento y sentecia dado.![[image.JTODW3.png|435]]
 Tenemos las instrucciones: 
 - {BEFORE | AFTER}
 - {INSERT | UPDATE | DELETE}
