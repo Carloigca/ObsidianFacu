@@ -112,6 +112,7 @@ process Caja [id: 0..4]{
 
 #### Ejercicio 3
 ```
+VERSION FLOJA
 process cliente [id: 0..C] {
 	int id
 	texto pedido
@@ -146,6 +147,7 @@ process cocineros [id: 0.. 1] {
 ```
 
 ```
+VERSION COMPLETA
 process cliente [id: 0..C] {
 	int id
 	texto pedido
