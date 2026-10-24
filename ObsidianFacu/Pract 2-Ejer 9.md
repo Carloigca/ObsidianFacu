@@ -80,7 +80,7 @@ R14 (#festival, cuil_musico,#banda,#tema, url_plataforma_entradas)
 R15 (#festival, url_plataforma_entradas)
 R16 (#festival, cuil_musico,#banda,#tema)
 -R15 está en 4FN ya que todas las DMs válidas en el esquema, son triviales
--R16 está en 4FN ya que la DM4 es válida  en el esquema y es trivial
+-R16 está en 4FN ya que la DM4 es válida en el esquema y es trivial
 
 R1 (#festival, denominación_festival, localidad)
 R3 (#banda, nombre_banda, estilo_musical)
