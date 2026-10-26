@@ -197,7 +197,7 @@ process cocineros [id: 0.. 1] {
 ```
 Este es mejor porque el coordinador le envía al vendedor solo cuando está libre, no está todo el tiempo
 
-#### Ejercicio 4A
+#### Ejercicio 4A y B
 ```
 process cliente [id= 0.. N-1]
 	aviso q llego
@@ -221,8 +221,93 @@ process empleado
 				entrego ticket
 
 process cliente[id=0.. N-1]{
-	send atencion (id)
-	//Debería usar un canal particular para cada tarea o usar uno mismo indicando tarea con un numero?
+	send pedidoCabina (id)
+	send atencion ()
+	receive clientes[id] (#cabina)
+	usar cabina (#cabina)
+	send dejoCabina (#cabina, pago, id)
+	send atencion ()
+	receive recibo[id] (ticket)
+}
+procedure empleado {
+	cabinas =10
+	while (true)
+		receive atención ()
+		if 
+			 (empty(dejoCabina) and not empty(pedidoCabina) and cabinas>0) ->
+				 receive pedidoCabina (id)
+				 pop (idCabina)
+				 cabinas --;
+				 send clientes[idCliente] (idCabina)
+				 
+			 (empty(dejoCabina) and cabinas=0) ->
+				 receive dejoCabina (idCabina, pago, idCliente)
+				 ticket= Cobrar (pago)
+				 send recibo[idCliente1] (ticket)
+				 receive atencion()
+				 receive pedidoCabina (idCliente)
+				 send clientes[idCliente] (idCabina)
+				 
+			 (not empty(dejoCabina) or ) ->
+				 receive dejoCabina (idCabina, pago, idCliente)
+				 push (idCabina)
+				 cabinas ++;
+				 ticket= Cobrar (pago)
+				 send recibo[idCliente] (ticket)
 }
 
+```
+
+#### Ejercicio 5A
+```
+process impresora [id= 1..3] {
+	while (true)
+		receive pedido (#Admin, doc)
+		aux = imprimir doc
+}
+
+process administrativo [id = 0.. N-1] {
+	while (true)
+		Trabajar
+		send pedido (id, doc)
+}
+```
+
+#### Ejercicio 5B
+```
+process impresora [id= 1..3] {
+	while (true)
+		receive pedidoGeneral ()
+		if (Empty (pedidosD))
+			receive pedido (#Admin, doc)
+			aux = imprimir (doc)
+		else
+			receive pedidosD (doc)
+			aux = imprimir (doc)
+}
+
+process buffer {
+	while (true) 
+		receive pedidoGeneral (doc)
+		if (empty (libres))
+		
+		si hay alguna impresora libre, le mando que imprima el doc
+		sino espero que alguno se libere
+		
+		Capaz debería hacer un if no deterministico (si) que reciba cuando una impresora se libera, cuando se recibe un doc y hay libres, y cuando se recibe un doc y no hay libres (como en el 4)
+}
+
+process administrativo [id = 0.. N-1] {
+	while (true)
+		Trabajar
+		send pedido (id, doc)
+		send pedidoGeneral ()
+}
+
+process director {
+	while (true)
+		Trabajar
+		send pedidosD (doc)
+		send pedidoGeneral ()
+}
 ```
