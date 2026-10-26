@@ -196,3 +196,33 @@ process cocineros [id: 0.. 1] {
 }
 ```
 Este es mejor porque el coordinador le envía al vendedor solo cuando está libre, no está todo el tiempo
+
+#### Ejercicio 4A
+```
+process cliente [id= 0.. N-1]
+	aviso q llego
+	aviso q quiero cabina
+	espero q me digan cabina
+	uso la cabina indicada
+	aviso al empleado
+	pago al empleado 
+	espero ticket
+process empleado
+	inicialmente tengo las 10 cabinas
+	loop infinito
+		recibo llamado del cliente y su id
+		if no deterministico
+			si es para pedir cabina
+				desencolo cabina
+				asigno cabina al id
+			si es para pagar
+				cobro al cliente 
+				libero su cabina
+				entrego ticket
+
+process cliente[id=0.. N-1]{
+	send atencion (id)
+	//Debería usar un canal particular para cada tarea o usar uno mismo indicando tarea con un numero?
+}
+
+```

@@ -22,14 +22,7 @@ Nota >=4 y <6 puede pedir hacer un tp a desarrollar (Ver primera clase)
 [[Apunte ProgConcu]]
 
 ---
-[[Clase 1 - Introducción a Concurrencia]]
-[[Clase 2 - Algoritmos]]
-[[Clase 3 - Semáforos]]
-[[Clase 4 - Monitores]]
-[[Clase 5 - ProgConcu]]
-[[Clase 6A - repaso PMA y PMS]]
-[[Clase 6B - RPC y Rendezvouz]]
-
+[[Clases teóricas con Explicaciones prácticas]]
 
 ---
 Pract1 en papel
