@@ -10,6 +10,8 @@ Clase 2 no me pude conectar, fue virtual como la 1
 [[Clase 6 - Entrevista]]
 [[Clase 7 - Agentes de IA y Supabase]]
 [[Clase 8 - Módulos y Clase de Agentes]]
+[[Clase 9 - Nuevos requerimientos]]
+
 
 ---
 ### Extras
