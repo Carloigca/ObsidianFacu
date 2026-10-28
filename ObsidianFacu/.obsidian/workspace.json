@@ -4,17 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "8f699247d030fcf2",
+        "id": "44c0ffe84737451f",
         "type": "tabs",
         "children": [
           {
-            "id": "b4db0044f074d213",
+            "id": "7f21201be0f38c39",
             "type": "leaf",
             "state": {
-              "type": "graph",
+              "type": "empty",
               "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Vista gráfica"
+              "icon": "lucide-file",
+              "title": "Nueva pestaña"
             }
           }
         ]
@@ -185,8 +185,10 @@
       "bases:Crear nueva base": false
     }
   },
-  "active": "b4db0044f074d213",
+  "active": "7f21201be0f38c39",
   "lastOpenFiles": [
+    "Clase 8 - Módulos y Clase de Agentes.md",
+    "TTPS.md",
     "Pract 4 - PMA y PMS.md",
     "Clase 8 - Librería para Memoria Compartida.md",
     "Pasted image 20261026101845.png",
@@ -203,8 +205,6 @@
     "Bases de datos 1.md",
     "Practica 2 - BD1.md",
     "Pract 2-Ejer 9.md",
-    "Clase 8 - Módulos y Clase de Agentes.md",
-    "TTPS.md",
     "Video y consulta 5-oct.md",
     "Clase 6 - Entrevista.md",
     "Clase 7 - Agentes de IA y Supabase.md",
