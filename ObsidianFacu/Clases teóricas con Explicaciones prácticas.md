@@ -7,4 +7,6 @@
 [[Clase 6B - RPC y Rendezvouz]]
 [[Clase 7 - Paradigmas y ADA]]
 [[Clase 8 - ELIMINAR]]
+[[Clase 10 - Programas paralelos]]
+
 

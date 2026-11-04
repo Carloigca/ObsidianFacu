@@ -262,35 +262,39 @@ procedure empleado {
 ```
 process impresora [id= 1..3] {
 	while (true)
-		receive pedido (#Admin, doc)
+		receive pedido (doc)
 		aux = imprimir doc
 }
 
 process administrativo [id = 0.. N-1] {
 	while (true)
-		Trabajar
-		send pedido (id, doc)
+		doc = Trabajar
+		send pedido (doc)
 }
 ```
 
 #### Ejercicio 5B
 ```
 process impresora [id= 1..3] {
+	send libres (id)
 	while (true)
-		receive pedidoGeneral ()
-		if (Empty (pedidosD))
-			receive pedido (#Admin, doc)
-			aux = imprimir (doc)
-		else
-			receive pedidosD (doc)
-			aux = imprimir (doc)
+		receive imprimir[id] (doc)
+		imprimir (doc)
+		send libres (id)
 }
 
 process buffer {
 	while (true) 
 		receive pedidoGeneral (doc)
-		if (empty (libres))
-		
+		receive libres (id)
+		if (not empty(pedidosD)) 
+			receive pedidosD (doc)
+			send imprimir[id] (doc)
+		else
+			receive pedidosA (doc)
+			send imprimir[id] (doc)
+}
+
 		si hay alguna impresora libre, le mando que imprima el doc
 		sino espero que alguno se libere
 		
@@ -300,7 +304,7 @@ process buffer {
 process administrativo [id = 0.. N-1] {
 	while (true)
 		Trabajar
-		send pedido (id, doc)
+		send pedidoA (doc)
 		send pedidoGeneral ()
 }
 
@@ -311,3 +315,75 @@ process director {
 		send pedidoGeneral ()
 }
 ```
+
+#### Ejercicio 5c
+```
+process impresora [id= 1..3] {
+	send libres (id)
+	receive imprimir[id] (doc)
+	while (doc <> NULL)
+		imprimir doc
+		send libres (id)
+		receive imprimir[id] (doc)
+}
+
+process buffer {
+	for int i=0..(N*10)-1 {
+		receive libres (id)
+		receive pedido (doc)
+		send imprimir[id] (doc)
+	}
+	for int i=0 .. 2
+		send imprimir[i] (NULL)
+}
+
+process administrativo [id = 0.. N-1] {
+	for int i= 0..9
+		Trabajar
+		send pedido (doc)
+}
+```
+
+#### Ejercicio 5d
+```
+process impresora [id= 1..3] {
+	send libres (id)
+	receive imprimir[id] (doc)
+	while (doc <> NULL)
+		imprimir doc
+		send libres (id)
+		receive imprimir[id] (doc)
+}
+
+process buffer {
+	for int i=0..((N+1)*10)-1 {
+		receive pedidoGeneral (doc)
+		receive libres (id) 
+		if (not empty(pedidosD)) 
+			receive pedidosD (doc)
+			send imprimir[id] (doc)
+		else
+			receive pedidosA (doc)
+			send imprimir[id] (doc)
+	}
+	for int i=0 .. 2
+		send imprimir[i] (NULL)
+}
+
+process administrativo [id = 0.. N-1] {
+	for int i= 0..9
+		Trabajar
+		send pedidosA (doc)
+		send pedidoGeneral ()
+}
+
+process director {
+	for int i= 0..9
+		Trabajar
+		send pedidosD (doc)
+		send pedidoGeneral ()
+}
+```
+
+#### Ejercicio 5e
+La solución del ejercicio 5d no implica Busy Waiting, ya que siempre que hay que esperar un resultado, el proceso se queda dormido
