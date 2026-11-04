@@ -27,6 +27,7 @@ Los PPT no son material de estudio, solo sirven de guía para los profes
 [[Clase 6 - MySQL]]
 [[Clase 7 - SQL II]]
 
+
 ### Prácticas
 [[Practica 2 - BD1]]
 [[Practica 3 - BD1]]
