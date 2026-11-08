@@ -29,6 +29,6 @@ Los PPT no son material de estudio, solo sirven de guía para los profes
 
 
 ### Prácticas
-[[Practica 2 - BD1]]
-[[Practica 3 - BD1]]
-[[Practica 4 - SQL]]
+[[Practica 2 - Normalización - BD1]]
+[[Practica 3 - AR - BD1]]
+[[Practica 4 - SQL - BD1]]
