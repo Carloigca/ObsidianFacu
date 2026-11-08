@@ -26,7 +26,8 @@ Los PPT no son material de estudio, solo sirven de guía para los profes
 [[Clase 5 - bd]]
 [[Clase 6 - MySQL]]
 [[Clase 7 - SQL II]]
-
+[[Clase 8 - Visualización de datos]]
+[[Charla 4-Nov]]
 
 ### Prácticas
 [[Practica 2 - Normalización - BD1]]

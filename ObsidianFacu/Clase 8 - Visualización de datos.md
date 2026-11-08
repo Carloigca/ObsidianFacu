@@ -1,3 +1,5 @@
+#clase 
+[[Clase - Visualización de datos]]
 #### Datos abiertos
 Al darle contexto a un dato, empezamos a tener información. 
 Un dato público es un dato generado en un ámbito gubernamental. Que sean públicos no implica q sean abiertos. Sean de origen publico ocerrado, pueden ser privados

@@ -38,6 +38,8 @@ La primera es de HTML-CSS-WCAG. La segunda es de Python. Estas no valen por punt
 [[Clase 1 - HTTP y estándares]]
 [[Clase 5 - MVC y Jinja]]
 [[Clase 9 - API y API REST]]
+[[Clase no sé - ProySoft]]
+[[Clase - Autenticación (Etapa2)]]
 
 
 ---
