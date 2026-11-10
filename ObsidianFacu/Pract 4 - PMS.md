@@ -67,7 +67,6 @@ process examinador [id= 0..N-1]{
 		coordi!infeccion (URL)
 	}
 }
-
 process coordi {
 	do
 		examinador[*]?infeccion (id,URL)->
@@ -77,7 +76,6 @@ process coordi {
 			analizador!infeccion (URL)
 	od
 }
-
 process analizador {
 	texto URL,res
 	int id
