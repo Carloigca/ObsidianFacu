@@ -6,7 +6,7 @@
 2. Mililitros de la sangre: Puede pasar q cuando la muestra llega a corea, por alguna razón esta muestra tenga baja calidad. En ese caso el administrativo puede indicar que se rehaga el estudio. Asumimos q el administrativo recibe un mail donde le dicen y este lo indica en el sistema. 
 Ignoramos el hecho de las 3 muestras
 3. Por temas de auditoría médica, se deben registrar todas las modificaciones en las entidades principales. Estudios con fecha y usuario de los cambios de estado. Lo mismo para los cambios en paciente si se cambia un familiar, dirección, cambios en su información, fecha de alta. Las entidades principales son estudio, muestra y paciente.
-El historial es clave xq cuando hagamos el tablero, vamos a querer saber los pasos que más se demoran en el proceso 
+El historial es clave xq cuando hagamos el tablero, vamos a querer saber los pasos que más se demoran en el proceso
 
 ---
 # Recomendaciones
