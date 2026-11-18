@@ -411,3 +411,12 @@ Usa esta lista para verificar cada punto de la consigna antes de integrar tu ram
 - [ ] **Vuelta al inicio y uso continuo:** Regresa automáticamente a la búsqueda tras confirmar una entrega (~3-4s) y descarta la operación tras 60s de inactividad. Avisa en pantalla si se pierde conexión con la API.
 - [ ] **Consultas del turno:** Desde la esquina se pueden consultar las entregas del turno (`GET /api/deliveries`) y los totales autorizados vs. entregados del día por comida y menú (`GET /api/deliveries/summary`), además de cerrar sesión (`POST /api/auth/logout`).
 - [ ] **Responsive:** Probado con las DevTools del navegador en móvil (`< 767px`), tablet vertical (`768x1024`), tablet horizontal (`1024x768`) y escritorio (`> 1025px`).
+
+---
+### Hice modificaciones en las seeds para probar estas cosas al terminar todo
+Desde que se levanta el sistema ya tengo: 
+- Comidas **Autorizadas pendientes** (Desayuno y Almuerzo).
+- Comidas **No autorizadas** (Merienda rechazada y Cena no pedida).
+- **Varias personas en el mismo sector** para probar tanto la búsqueda individual por DNI como el retiro grupal por sector y la designación de responsable.
+
+![[Pasted image 20261116161903.png]]
