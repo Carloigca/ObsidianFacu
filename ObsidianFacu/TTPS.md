@@ -1,5 +1,9 @@
 #materia
-
+#### Proyecto TTPS
+[[Plan de ejecución ttps]]
+- Para levantar el frontend, te parás en la carpeta de frontend y ejecutas "npm run dev"
+- Para probar las seeds...
+- 
 ---
 [[Clase 1 - TTPS]]
 Clase 2 no me pude conectar, fue virtual como la 1
@@ -16,3 +20,5 @@ Clase 2 no me pude conectar, fue virtual como la 1
 ---
 ### Extras
 [[Video y consulta 5-oct]]
+
+1963
