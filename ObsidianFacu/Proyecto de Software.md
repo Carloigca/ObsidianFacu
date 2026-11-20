@@ -1,6 +1,7 @@
 #materia
 [[Cosas del proyecto]] (Como levantarlo)
 [[Plan de Implementación - Módulo de Entrega de Pedidos (Etapa 2)]]
+[[Mejoras finales de proyecto]]
 
 Página: https://proyecto-de-software.github.io/
 Server disc: https://discord.gg/TKCFqnUXQF

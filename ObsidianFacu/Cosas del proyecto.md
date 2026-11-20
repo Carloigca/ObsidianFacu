@@ -1,4 +1,4 @@
-- Para levantar la App privada de los admin: 
+- Para levantar el backend (y la App privada de los admin): 
 en la carpeta admin ejecutar:
 poetry run python main.py 
 o sino
