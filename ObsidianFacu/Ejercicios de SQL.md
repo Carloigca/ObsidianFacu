@@ -38,68 +38,50 @@ DELIMITER;
 ```
 
 ### Parcial 2026 primera fecha tema 1
-```
-
-```
-### **Código SQL del Trigger**
-
-#### **Opción 1: Con estructura de control condicional (** **IF ... THEN ... ELSE** **)**
-
-Esta es la forma procedimental más clara y estándar para exámenes de la cátedra:
-
-```
+``` SQL 
 DELIMITER //
-
-CREATE TRIGGER trg_actualizar_resumen_monitoreo
-AFTER INSERT ON MEDICION_MONITOREO
-FOR EACH ROW
+CREATE TRIGGER actualizar_resumen
+AFTER INSERT 
+ON MEDICION_MONITOREO FOR EACH ROW
 BEGIN
-    IF NEW.supera_limite = 'T' THEN
-        -- Si superó el límite, incrementa tanto monitoreos como anomalías
-        UPDATE RESUMEN_POZO
-        SET total_monitoreos = total_monitoreos + 1,
-            anomalias_detectadas = anomalias_detectadas + 1,
-            ultima_actualizacion = NOW()
-        WHERE id_pozo = NEW.id_pozo;
-    ELSE
-        -- Si no superó el límite, solo incrementa el total de monitoreos
-        UPDATE RESUMEN_POZO
-        SET total_monitoreos = total_monitoreos + 1,
-            ultima_actualizacion = NOW()
-        WHERE id_pozo = NEW.id_pozo;
-    END IF;
-END //
-
-DELIMITER ;
-
+	DECLARE anomalia INT
+	IF (NEW.supera_limite) THEN
+		SET anomalia= 1;
+	ELSE
+		SET anomalia= 0;
+	
+	UPDATE RESUMEN_POZO 
+	SET (total_monitoreos= total_monitoreos+1, 
+		anomalias_detectadas= anomalias_detectadas+anomalia,
+		ultima_actualizacion= NOW())
+	WHERE NEW.id_pozo = r.id_pozo
+END;
+DELIMITER;
 ```
 
----
-
-#### **Opción 2: Simplificada en un único** **UPDATE** **(usando** **IF()** **inline)**
-
-También puedes resolverlo en una sola sentencia SQL aprovechando la función condicional `IF(condición, valor_si_verdadero, valor_si_falso)`:
-
-```
-DELIMITER //
-
-CREATE TRIGGER trg_actualizar_resumen_monitoreo
-AFTER INSERT ON MEDICION_MONITOREO
-FOR EACH ROW
+### Parcial 2025 Segunda fecha
+``` SQL
+DELIMITER//
+CREATE PROCEDURE vender (IN #producto INT, IN cant INT, IN #cliente INT)
 BEGIN
-    UPDATE RESUMEN_POZO
-    SET total_monitoreos = total_monitoreos + 1,
-        anomalias_detectadas = anomalias_detectadas + IF(NEW.supera_limite = 'T', 1, 0),
-        ultima_actualizacion = NOW()
-    WHERE id_pozo = NEW.id_pozo;
-END //
-
-DELIMITER ;
-
+	DECLARE stock INT;
+	DECLARE precio_unit INT;
+	
+	SELECT p.stock_actual INTO stock, p.precio INTO precio_unit
+	FROM PRODUCTO p
+	WHERE p.#producto = #producto
+	
+	IF (stock-cant >= 0) THEN
+		INSERT INTO VENTA (producto, cantidad, monto, #cliente)
+		
 ```
 
 ---
 ## Dudas
 - Para poner fecha y hora actual solo hay que poner NOW() ?
 - Hay alguna otra función usada seguido como la que te da fecha y hora actual?
-- 
+  CURRENT_USER da el nombre. Hay otra para obtener nombre y otra cosa.
+- Cómo se manejan los INSERT cuando hay datos autoincrementales? 
+  Puedo obtener el ultimo ID en una variable
+  DECLARE variable INT;
+  SET variable= LAST_INSERT_ID();
