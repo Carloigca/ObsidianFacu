@@ -1,9 +1,10 @@
 #extra 
+[[Ejercicios de SQL]]
 Es un lenguaje especialmente diseñado para manipular y consultar bases de datos relacionales q se convirtió en un estándar. 
 Se basa en el álgebra relacional y el cálculo relacional, y se compone por un lenguaje de definición de datos (DDL), un lenguaje de manipulación de datos (DML), y un lenguaje de control de datos (DCL)
 
-#### DDL
-El DDL nos permite definir la estructura y características de los elementos de las bases de datos como son las tablas, colunas, claves primarias y foráneas o restricciones. 
+#### DDL = Data definition Language
+El DDL nos permite **definir la estructura y características** de los elementos de las bases de datos como son las tablas, colunas, claves primarias y foráneas o restricciones. 
 
 (((Comenzó a ir rápido el profesor)))
 
@@ -22,7 +23,8 @@ Con Default establecemos un valor por defecto para el campo.
 Con check especificamos una condición que el atributo debe cumplir. Por ejemplo (que una letra sea de A a F)
 Con autoincrement establecemos q un atributo se vaya incrementando en cada tupla q se crea, en la tabla solo puede haber un atributo con esta restricción
 
-#### DCL
+#### DCL = Data Control Language
+Permite administrar los usuarios y sus permisos en la BD
 Los usuarios no se eliminan, se hacen bajas lógicas. 
 Con CREATE USER y DROP USER creamos y eliminamos un usuario e indicamos el host donde se establece la conexión. 
 Con GRANT otorgamos permisos, y con REVOKE le sacamos permisos. Tenemos GRANT ALL, y REVOKE SELECT ON.
@@ -32,8 +34,8 @@ El control de acceso consiste en:
 2. Se comprueba cada comando ejecutado por el usuario para ver si tiene los permisos para hacerlo. 
 Si cambian los permisos, estos cambios se reflejan recién al arrancar el servidor de la BD, cuando se cargan las tablas de permisos los cambios no tienen efecto inmediato a no ser que lo fuerce (con el comando FLUSH PRIVILEGES)
 
-#### DML
-Nos permite modificar los datos de las tablas.
+#### DML = Data Manipulation Language
+Nos permiten manipular la información de las tablas de la BD. Podemos recuperar, agregar, eliminar y modificar información 
 Tenemos las operaciones: 
 - INSERT 
 - UPDATE

@@ -23,7 +23,7 @@ Los PPT no son material de estudio, solo sirven de guía para los profes
 [[Clase 2 - Conceptos generales del diseño de BD Relacionales]]
 [[Clase 3 - Conceptos generales del diseño de bd relacional]]
 [[Clase 4 - BCNF y DM]]
-[[Clase 5 - bd]]
+[[Clase 5 - Taller y AR]]
 [[Clase 6 - MySQL]]
 [[Clase 7 - SQL II]]
 [[Clase 8 - Visualización de datos]]
@@ -33,3 +33,5 @@ Los PPT no son material de estudio, solo sirven de guía para los profes
 [[Practica 2 - Normalización - BD1]]
 [[Practica 3 - AR - BD1]]
 [[Practica 4 - SQL - BD1]]
+
+[[Ejercicios de SQL]]
