@@ -59,21 +59,64 @@ END;
 DELIMITER;
 ```
 
-### Parcial 2025 Segunda fecha
+### Parcial 2025 Segunda fecha 
 ``` SQL
 DELIMITER//
 CREATE PROCEDURE vender (IN #producto INT, IN cant INT, IN #cliente INT)
 BEGIN
 	DECLARE stock INT;
 	DECLARE precio_unit INT;
+	DECLARE precio_total INT;
 	
-	SELECT p.stock_actual INTO stock, p.precio INTO precio_unit
-	FROM PRODUCTO p
-	WHERE p.#producto = #producto
+	DECLARE EXIT HANDLER FOR SQLEXCEPTION
+	BEGIN
+		ROLLBACK;
+	END;
 	
-	IF (stock-cant >= 0) THEN
-		INSERT INTO VENTA (producto, cantidad, monto, #cliente)
+	START TRANSACTION 
+		SELECT p.stock_actual INTO stock, p.precio INTO precio_unit
+		FROM PRODUCTO p
+		WHERE p.#producto = #producto
+		FOR UPDATE;
 		
+		IF (stock-cant >= 0) THEN BEGIN
+			SET precio_total= precio_unit * cant;
+			
+			INSERT INTO VENTA (producto, cantidad, monto, #cliente)
+			VALUES (#producto, cant, precio_total, #cliente)
+			
+			UPDATE PRODUCTO 
+			SET stock_actual= stock_actual-stock;
+			WHERE p.#producto = #producto;
+			
+			COMMIT;
+		ELSE
+			ROLLBACK;
+		END IF;
+END;
+DELIMITER; 
+```
+
+### Parcial 2025 tercera fecha
+``` SQL
+DELIMITER//
+CREATE TRIGGER actualizar_puntos
+AFTER INSERT ON RENOVACION
+FOR EACH ROW
+BEGIN
+	DECLARE puntos INT
+	
+	SELECT p.puntaje_otorgado INTO puntos
+	FROM PLAN p
+	WHERE p.id_plan = NEW.id_plan;
+	
+	UPDATE SUSCRIPCION 
+	SET 
+		(puntaje_obtenido= puntaje_obtenido + puntos,
+		cant_renovaciones= cant_renovaciones + 1)
+	WHERE id_suscripcion = NEW.id_suscripcion;
+END;
+DELIMITER;
 ```
 
 ---
@@ -85,3 +128,28 @@ BEGIN
   Puedo obtener el ultimo ID en una variable
   DECLARE variable INT;
   SET variable= LAST_INSERT_ID();
+
+#### Triggers
+CREATE TRIGGER nombre
+AFTER|BEFORE ACCION ON tabla
+FOR EACH ROW
+BEGIN
+	//Codigo
+END;
+
+#### SP Store Procedures
+CREATE PROCEDURE nombre (IN/OUT nombreParam TIPO)
+BEGIN
+	DECLARE var1
+	DECLARE EXIT HANDLER FOR SQLEXCEPTION
+		ROLLBACK
+	END;
+
+	//Código
+END;
+
+#### Transacciones
+Tienen q tener el exit handler por si falla, con un rollback
+Dsp del START TRANSACTION siempre tiene que haber un COMMIT o ROLLBACK. Si hay un if para hacer la transaccion, en los dos casos del if se debe hacer una de las dos opciones (commit o rollback)
+
+En los SELECT puedo bloquear filas con FOR UPDATE después del WHERE. Se bloquea durante toda la transaccion, no?
